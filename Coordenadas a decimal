@@ -1,0 +1,45 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+    char lon, la;
+	float gr, mi, se, gr1, mi1, se1;
+	int latitud=0, longitud=0;
+     printf("Ingrese los datos que se piden:\n");
+     printf("Latitud [N/S]:");
+     scanf("%c", &la);
+                  printf("Grados [0-59]:");
+     scanf("%i", &gr);
+                  printf("Minutos [0-60]:");
+     scanf("%i", &mi);
+                  printf("Segundos [0-59.9]:");
+     scanf("%i", &se);
+     printf("Longitud [E/O]:\n");
+      scanf("%c", &lon);
+                    printf("Grados:[0-59]");
+     scanf("%i", &gr1);
+                    printf("Minutos [0-60]:");
+     scanf("%i", &mi1);
+                    printf("Segundos[0-59.9]:");
+     scanf("%i", &se1);
+     
+     latitud= ((gr)+(mi/60)+(se/3600));
+     longitud= ((gr1)+(mi1/60)+(se1/3600));
+     
+     if ((strcmp(la, "n") == 0)&&(strcmp(lon, "o")==0)){
+     	printf("https://maps.google.com/maps/place/%i,%i")latitud,longitud;
+     }
+      else if ((strcmp(la, "n") == 0)&&(strcmp(lon, "e")==0)) {
+     		printf("https://maps.google.com/maps/place/%i,-%i")latitud,longitud;
+     }
+     else if ((strcmp(la, "s")&&(strcmp(lon, "o")==0)){
+     	printf("https://maps.google.com/maps/place/-%i,%i")latitud,longitud;
+     }
+     else {
+     	 printf("https://maps.google.com/maps/place/-%i,-%i")latitud,longitud;
+     }
+    
+     return 0;
+}

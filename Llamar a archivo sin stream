@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char const *argv[]){
+	FILE *aarchivo;
+	char linea [10];
+	
+	aarchivo = fopen("ids_unix.txt","r");
+	
+	if(aarchivo==NULL)
+	{
+		printf("Error al abrir el archivo.\n");
+		return(1);
+		
+	}
+	printf("las direcciones de correo son:\n");
+	
+	while(fgets-(linea,10,aarchivo)!=NULL)
+	{
+		printf("0%s@ulsaoaxaca.edu.mx\n",linea);
+	}
+	fclose(aarchivo);
+}
